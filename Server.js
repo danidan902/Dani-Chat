@@ -12,7 +12,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://danichatting.vercel.app",
     methods: ["GET", "POST"],
     credentials: true
   }
@@ -20,7 +20,7 @@ const io = socketIo(server, {
 
 // Middleware
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: "https://danichatting.vercel.app",
   credentials: true
 }));
 app.use(express.json());
@@ -412,6 +412,6 @@ const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`📍 Frontend: http://localhost:3000`);
-  console.log(`📁 Uploads serving from: http://localhost:${PORT}/uploads/`);
-  console.log(`❤️  Health check: http://localhost:${PORT}/api/health`);
+  console.log(`📁 Uploads serving from: https://danichatting.vercel.app${PORT}/uploads/`);
+  console.log(`❤️  Health check: https://danichatting.vercel.app${PORT}/api/health`);
 });
