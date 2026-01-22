@@ -8,11 +8,14 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 
+
+
+
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "https://danichatting.vercel.app",
+    origin: "https://danichatting.vercel.app", "https://dani-chat.onrender.com"
     methods: ["GET", "POST"],
     credentials: true
   }
@@ -20,7 +23,7 @@ const io = socketIo(server, {
 
 // Middleware
 app.use(cors({
-  origin: "https://danichatting.vercel.app",
+  origin: "https://danichatting.vercel.app", "https://dani-chat.onrender.com"
   credentials: true
 }));
 app.use(express.json());
@@ -58,7 +61,8 @@ const upload = multer({
 });
 
 // MongoDB Connection
-mongoose.connect('mongodb+srv://dan93575:LAi%4083UCBptXPWx@cluster0.7gnyjeb.mongodb.net/chat_app?retryWrites=true&w=majority', {
+// MONGO_URI=mongodb+srv://dan93575:LAi-83UCBptXPWx@cluster0.7gnyjeb.mongodb.net/notes_db?retryWrites=true&w=majority&appName=Cluster0
+mongoose.connect('mongodb+srv://dan93575:LAi-83UCBptXPWx@cluster0.7gnyjeb.mongodb.net/notes_db?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
@@ -88,7 +92,7 @@ const messageSchema = new mongoose.Schema({
   messageType: { type: String, default: 'text' }
 });
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('UserName', userSchema);
 const Message = mongoose.model('Message', messageSchema);
 
 // Store active users
