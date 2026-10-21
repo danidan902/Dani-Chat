@@ -15,7 +15,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "https://danichatting.vercel.app", "https://dani-chat.onrender.com"
+    origin: "https://danichatting.vercel.app",
     methods: ["GET", "POST"],
     credentials: true
   }
@@ -23,7 +23,7 @@ const io = socketIo(server, {
 
 // Middleware
 app.use(cors({
-  origin: "https://danichatting.vercel.app", "https://dani-chat.onrender.com"
+  origin: "https://danichatting.vercel.app",
   credentials: true
 }));
 app.use(express.json());
@@ -62,7 +62,7 @@ const upload = multer({
 
 // MongoDB Connection
 // MONGO_URI=mongodb+srv://dan93575:LAi-83UCBptXPWx@cluster0.7gnyjeb.mongodb.net/notes_db?retryWrites=true&w=majority&appName=Cluster0
-mongoose.connect('mongodb+srv://dan93575:LAi-83UCBptXPWx@cluster0.7gnyjeb.mongodb.net/notes_db?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect('mongodb+srv://danid93575_db_user:dani123456@cluster0.kskqnbz.mongodb.net/SchoolDB?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
